@@ -2,7 +2,7 @@
 // a function always returns a promise. Other values are wrapped in a resolved promise automatically.
 
 async function f () {
-  return Promise.resolve(1)
+  return Promise.resolve(1);
 }
 
 f().then(result => console.log(result))
@@ -13,12 +13,12 @@ f().then(result => console.log(result))
 
 async function foo () {
   const promise = new Promise((resolve, reject) => {
-    setTimeout(() => resolve('done!'), 1000)
+    setTimeout(() => resolve('done!'), 1000);
   })
 
-  const result = await promise // wait until the promise resolves (*)
+  const result = await promise; // wait until the promise resolves (*)
 
-  console.log(result) // "done!"
+  console.log(result); // "done!"
 }
 
-foo()
+foo();

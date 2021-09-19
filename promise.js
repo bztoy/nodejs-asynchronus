@@ -6,7 +6,7 @@ const promise = new Promise(function (resolve, reject) {
   // executor (the producing code, "singer")
 
   // after 1 second signal that the job is done with the result "done"
-  setTimeout(() => resolve('done'), 1000)
+  setTimeout(() => resolve('done'), 1000);
 
   // Error: Whoops!" after 1 second
   // setTimeout(() => reject(new Error("Whoops!")), 1000);
@@ -25,4 +25,4 @@ promise.then(
 // f we’re interested only in successful completions,
 // then we can provide only one function argument to .then:
 
-promise.then() // shows "done!" after 1 second
+promise.then(); // shows "done!" after 1 second

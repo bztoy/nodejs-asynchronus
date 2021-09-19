@@ -1,27 +1,30 @@
-const fetch = require('node-fetch')
-const path = require('path')
+// Error Handling in Async
+
+const path = require('path');
+const fetch = require('node-fetch');
 
 async function f () {
   try {
-    const response = await fetch('http://no-such-url')
+    // function expression (const response = ) was removed
+    await fetch('http://no-such-url');
   } catch (err) {
-    console.log(err.code) // TypeError: failed to fetch
+    console.log(err.code); // TypeError: failed to fetch
   }
 }
 
-f()
+f();
 
 async function foo () {
   try {
-    const fullpath = path.join(path.dirname(require.main.filename), 'users.json')
-    const response = await fetch(fullpath)
-    const user = await response.json()
+    const fullpath = path.join(path.dirname(require.main.filename), 'users.json');
+    const response = await fetch(fullpath);
+    const user = await response.json();
 
-    return user.name
+    return user.name;
   } catch (err) {
     // catches errors both in fetch and response.json
-    console.log(err)
+    console.log(err);
   }
 }
 
-foo()
+foo();
